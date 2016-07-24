@@ -78,7 +78,11 @@ $db['default'] = array(
 	'hostname' => 'localhost',
 	'username' => 'root',
 	'password' => 'coder',
+<<<<<<< HEAD
 	'database' => 'Mahabazar',
+=======
+	'database' => 'Mayabazar',
+>>>>>>> f139a35927a66734aee36cad1a943a55f2f0a48a
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
