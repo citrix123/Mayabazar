@@ -218,6 +218,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                                     <input type="text" class="form-control" name="name" placeholder="Name" />
                                                 </div>
                                             </div>
+                                            <br>
                                         </div>
                                       </div>
                                     <div class="form-group">
@@ -231,7 +232,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <label for="mobile" class="col-sm-2 control-label">
                                             Mobile</label>
                                         <div class="col-sm-10">
-                                            <input type="email" class="form-control" id="mobile" name="mobile" placeholder="Mobile" />
+                                            <input type="text" class="form-control" id="mobile" name="mobile" placeholder="Mobile" />
                                         </div>
                                     </div>
                                     <div class="form-group">
@@ -240,8 +241,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                         <div class="col-sm-10">
                                             <!-- <input type="password" class="form-control" id="password" placeholder="Password" /> -->
                                             <select name="customerType" class="form-control">
-                                                <option>Customer</option>
-                                                <option>ShopKeeper</option>
+                                                <option readonly>Select Type</option>
+                                                <option value="Customer">Customer</option>
+                                                <option value="Shopkeeper">ShopKeeper</option>
                                             </select>
                                         </div>
                                     </div>
