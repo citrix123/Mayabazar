@@ -15,9 +15,9 @@
      * else:
      * 	Display Error
      */
-    public function checkUserExists($username)
+    public function checkUserExists($username , $password)
     {
-      $query = $this->db->get_where('login_details', array('username' => $username));
+      $query = $this->db->get_where('login_details', array('username' => $usernamea , 'password' => $password));
       if($query->conn_id->affected_rows == 0){
         return true;
       }
@@ -41,11 +41,18 @@
 
         $this->db->insert('login_details', $login_details);
         return true;
-      } catch (Exception $e) {
-        print_r($e);
+      }
+      catch (Exception $e) {
+          print_r($e);
       }
     }
 
+    public function getCustomerId($username , $password)
+    {
+      $id = $this->db->select('customer_id')->where(array('username' => $usernamea , 'password' => $password))
+              ->from('login_details');
+      return $id;
+    }
   }
 
 ?>

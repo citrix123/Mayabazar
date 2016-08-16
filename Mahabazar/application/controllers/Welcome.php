@@ -20,9 +20,10 @@ class Welcome extends CI_Controller {
 	}
 
 	/**
-	 * register Method is to register new member to our web Site
+	 * [register On Register Clicked]
+	 * @return [load View]        [Load View Page]
 	 */
-	public function register($value='')
+	public function register()
 	{
 		$this->form_validation->set_rules('name', 'Name', 'trim|required');  //|callback_checkUserExists
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email');
@@ -40,8 +41,32 @@ class Welcome extends CI_Controller {
 		$this->load->view('brand');
 	}
 
-	public function checkUserExists($username)
+	/**
+	 * [Main function Login is Clicked]
+	 * get username and password
+	 * if user exists:
+	 * 	get type of user
+	 * 	return index page for Corresponding user
+	 * @return [index] [Return the Page Corresponds to Login]
+	 */
+	public function login()
 	{
-		return $this->db_connect->checkUserExists($username);
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
+		if ($this->checkUserExists($username , $password)) {
+			
+		}
 	}
+
+	/**
+	 * [checkUserExists Helper Function for Checking user]
+	 * @param  [String] $username [Username]
+	 * @param  [String] $password [password]
+	 * @return [bool]           [True or False]
+	 */
+	public function checkUserExists($username, $password)
+	{
+		return $this->db_connect->checkUserExists($username , $password);
+	}
+
 }

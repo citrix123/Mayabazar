@@ -148,7 +148,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 <!-- MODAL -->
 
-<form action="php/M_login.php" method="POST">
+<!-- <form action="php/M_login.php" method="POST"> -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-lg">
@@ -168,9 +168,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <li><a href="#Registration" data-toggle="tab">Registration</a></li>
                             </ul>
                             <!-- Tab panes -->
+
                             <div class="tab-content">
+                              <?php echo form_open_multipart('Welcome/login'); ?>
                                 <div class="tab-pane active" id="Login">
-                                    <form role="form" class="form-horizontal">
+                                    <!-- <form role="form" class="form-horizontal"> -->
                                       <div class="form-group">
                                           <label for="email" class="col-sm-2 control-label">
                                               UserName </label>
@@ -268,7 +270,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </div>
     </div>
-</form>
+<!-- </form> -->
 <!-- Modal Ends -->
 
 
